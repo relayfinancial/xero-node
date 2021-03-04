@@ -22,6 +22,12 @@ const test = (params, cb) => {
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
     return localVarRequest(params, cb);
 };
+const resolveWrapper = (resolve, resp) => {
+    console.log("-----------------------------------");
+    console.log('[xero-node] resp ', JSON.stringify(resp));
+    console.log("-----------------------------------");
+    resolve(resp);
+};
 var AccountingApiApiKeys;
 (function (AccountingApiApiKeys) {
 })(AccountingApiApiKeys = exports.AccountingApiApiKeys || (exports.AccountingApiApiKeys = {}));
@@ -116,7 +122,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Accounts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -214,7 +220,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -312,7 +318,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -381,7 +387,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -452,7 +458,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -515,7 +521,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransfers');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -612,7 +618,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -681,7 +687,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -748,7 +754,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BatchPayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -817,7 +823,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -886,7 +892,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PaymentServices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -983,7 +989,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1046,7 +1052,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ContactGroups');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1115,7 +1121,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1184,7 +1190,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1251,7 +1257,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1324,7 +1330,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Allocations');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1426,7 +1432,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1495,7 +1501,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1566,7 +1572,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CreditNotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1629,7 +1635,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Currencies');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1696,7 +1702,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Employees');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1765,7 +1771,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1828,7 +1834,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ExpenseClaims');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1930,7 +1936,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -1999,7 +2005,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2070,7 +2076,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Invoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2139,7 +2145,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2210,7 +2216,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Items');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2273,7 +2279,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'LinkedTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2371,7 +2377,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2440,7 +2446,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2507,7 +2513,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ManualJournals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2580,7 +2586,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Allocations');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2649,7 +2655,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2712,7 +2718,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Payments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2781,7 +2787,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2844,7 +2850,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PaymentServices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2911,7 +2917,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Payments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -2984,7 +2990,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Allocations');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3053,7 +3059,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3151,7 +3157,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3220,7 +3226,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3287,7 +3293,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3385,7 +3391,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3454,7 +3460,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3521,7 +3527,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Quotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3588,7 +3594,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Receipts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3686,7 +3692,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3755,7 +3761,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3853,7 +3859,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3922,7 +3928,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -3985,7 +3991,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TaxRates');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4048,7 +4054,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingCategories');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4117,7 +4123,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingOptions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4180,7 +4186,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Accounts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4249,7 +4255,7 @@ class AccountingApi {
                         }
                         else {
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4311,7 +4317,7 @@ class AccountingApi {
                         }
                         else {
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4373,7 +4379,7 @@ class AccountingApi {
                         }
                         else {
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4435,7 +4441,7 @@ class AccountingApi {
                         }
                         else {
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4504,7 +4510,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Payments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4567,7 +4573,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingCategories');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4637,7 +4643,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingOptions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4705,7 +4711,7 @@ class AccountingApi {
                         }
                         else {
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4768,7 +4774,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Accounts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4844,7 +4850,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4920,7 +4926,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -4983,7 +4989,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5050,7 +5056,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Accounts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5117,7 +5123,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5193,7 +5199,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5269,7 +5275,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5332,7 +5338,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5407,7 +5413,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5470,7 +5476,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5533,7 +5539,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransfers');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5609,7 +5615,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5685,7 +5691,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5748,7 +5754,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5811,7 +5817,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5878,7 +5884,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransfers');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -5941,7 +5947,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6008,7 +6014,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BatchPayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6071,7 +6077,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BrandingThemes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6134,7 +6140,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PaymentServices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6191,7 +6197,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BrandingThemes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6254,7 +6260,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6330,7 +6336,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6406,7 +6412,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6469,7 +6475,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6532,7 +6538,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6595,7 +6601,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CISSettings');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6658,7 +6664,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ContactGroups');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6723,7 +6729,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ContactGroups');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6786,7 +6792,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6865,7 +6871,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6932,7 +6938,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CreditNotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -6995,7 +7001,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7071,7 +7077,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7147,7 +7153,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7210,7 +7216,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7273,7 +7279,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7348,7 +7354,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CreditNotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7413,7 +7419,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Currencies');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7476,7 +7482,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Employees');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7543,7 +7549,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Employees');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7606,7 +7612,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ExpenseClaims');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7669,7 +7675,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7736,7 +7742,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ExpenseClaims');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7803,7 +7809,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Invoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7866,7 +7872,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -7942,7 +7948,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8018,7 +8024,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8081,7 +8087,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8144,7 +8150,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8201,7 +8207,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'InvoiceReminders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8300,7 +8306,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Invoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8367,7 +8373,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Items');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8430,7 +8436,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8501,7 +8507,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Items');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8564,7 +8570,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Journals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8631,7 +8637,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Journals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8694,7 +8700,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'LinkedTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8775,7 +8781,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'LinkedTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8838,7 +8844,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ManualJournals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8914,7 +8920,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -8990,7 +8996,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9053,7 +9059,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9124,7 +9130,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ManualJournals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9187,7 +9193,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9250,7 +9256,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'OnlineInvoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9307,7 +9313,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Actions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9370,7 +9376,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CISOrgSettings');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9427,7 +9433,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Organisations');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9490,7 +9496,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Overpayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9553,7 +9559,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9628,7 +9634,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Overpayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9691,7 +9697,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Payments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9754,7 +9760,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9811,7 +9817,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PaymentServices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9882,7 +9888,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Payments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -9945,7 +9951,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Prepayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10008,7 +10014,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10083,7 +10089,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Prepayments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10146,7 +10152,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10209,7 +10215,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10285,7 +10291,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10361,7 +10367,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10424,7 +10430,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10487,7 +10493,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10550,7 +10556,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10629,7 +10635,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10692,7 +10698,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Quotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10755,7 +10761,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10831,7 +10837,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10907,7 +10913,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -10970,7 +10976,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11033,7 +11039,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11128,7 +11134,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Quotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11195,7 +11201,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Receipts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11271,7 +11277,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11347,7 +11353,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11410,7 +11416,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11473,7 +11479,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11544,7 +11550,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Receipts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11607,7 +11613,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'RepeatingInvoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11683,7 +11689,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11759,7 +11765,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Buffer');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11822,7 +11828,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11885,7 +11891,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'HistoryRecords');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -11950,7 +11956,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'RepeatingInvoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12027,7 +12033,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12104,7 +12110,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12167,7 +12173,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12224,7 +12230,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12309,7 +12315,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12374,7 +12380,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12443,7 +12449,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12504,7 +12510,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12601,7 +12607,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12662,7 +12668,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Reports');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12727,7 +12733,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ReportWithRows');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12796,7 +12802,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TaxRates');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12865,7 +12871,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingCategories');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12928,7 +12934,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingCategories');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -12991,7 +12997,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Users');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13058,7 +13064,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Users');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13121,7 +13127,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ImportSummaryObject');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13190,7 +13196,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Accounts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13288,7 +13294,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13361,7 +13367,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13459,7 +13465,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13556,7 +13562,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13625,7 +13631,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13722,7 +13728,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13791,7 +13797,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ContactGroups');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13864,7 +13870,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CreditNotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -13962,7 +13968,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14031,7 +14037,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ExpenseClaims');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14104,7 +14110,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Invoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14202,7 +14208,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14275,7 +14281,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Items');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14344,7 +14350,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'LinkedTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14413,7 +14419,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ManualJournals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14511,7 +14517,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14582,7 +14588,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'BankTransactions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14649,7 +14655,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Contacts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14720,7 +14726,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'CreditNotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14787,7 +14793,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Employees');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14858,7 +14864,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Invoices');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14929,7 +14935,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Items');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -14996,7 +15002,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'ManualJournals');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15063,7 +15069,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15130,7 +15136,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Quotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15199,7 +15205,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'PurchaseOrders');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15297,7 +15303,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15366,7 +15372,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Quotes');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15464,7 +15470,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15537,7 +15543,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Receipts');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15635,7 +15641,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15733,7 +15739,7 @@ class AccountingApi {
                             body = JSON.parse(body);
                             body = models_1.ObjectSerializer.deserialize(body, 'Attachments');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15796,7 +15802,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TaxRates');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15865,7 +15871,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingCategories');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -15941,7 +15947,7 @@ class AccountingApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'TrackingOptions');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });

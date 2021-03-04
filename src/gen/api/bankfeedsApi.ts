@@ -24,6 +24,13 @@ const test = (params: any, cb: any) => {
 	return localVarRequest(params, cb);
 };
 
+const resolveWrapper = (resolve: any, resp: any) => {
+	console.log("-----------------------------------");
+	console.log('[xero-node] resp ', JSON.stringify(resp));
+	console.log("-----------------------------------");
+	resolve(resp);
+}
+
 export enum BankFeedsApiApiKeys {}
 
 export class BankFeedsApi {
@@ -143,7 +150,7 @@ export class BankFeedsApi {
 						} else {
 							body = ObjectSerializer.deserialize(body, 'FeedConnections');
 							if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-								resolve({ response: response, body: body });
+								resolveWrapper(resolve, { response: response, body: body });
 							} else {
 								reject({ response: response, body: body });
 							}
@@ -214,7 +221,7 @@ export class BankFeedsApi {
 					} else {
 						body = ObjectSerializer.deserialize(body, 'Statements');
 						if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-							resolve({ response: response, body: body });
+							resolveWrapper(resolve, { response: response, body: body });
 						} else {
 							reject({ response: response, body: body });
 						}
@@ -292,7 +299,7 @@ export class BankFeedsApi {
 						} else {
 							body = ObjectSerializer.deserialize(body, 'FeedConnections');
 							if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-								resolve({ response: response, body: body });
+								resolveWrapper(resolve, { response: response, body: body });
 							} else {
 								reject({ response: response, body: body });
 							}
@@ -370,7 +377,7 @@ export class BankFeedsApi {
 						} else {
 							body = ObjectSerializer.deserialize(body, 'FeedConnection');
 							if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-								resolve({ response: response, body: body });
+								resolveWrapper(resolve, { response: response, body: body });
 							} else {
 								reject({ response: response, body: body });
 							}
@@ -451,7 +458,7 @@ export class BankFeedsApi {
 						} else {
 							body = ObjectSerializer.deserialize(body, 'FeedConnections');
 							if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-								resolve({ response: response, body: body });
+								resolveWrapper(resolve, { response: response, body: body });
 							} else {
 								reject({ response: response, body: body });
 							}
@@ -533,7 +540,7 @@ export class BankFeedsApi {
 					} else {
 						body = ObjectSerializer.deserialize(body, 'Statement');
 						if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-							resolve({ response: response, body: body });
+							resolveWrapper(resolve, { response: response, body: body });
 						} else {
 							reject({ response: response, body: body });
 						}
@@ -621,7 +628,7 @@ export class BankFeedsApi {
 					} else {
 						body = ObjectSerializer.deserialize(body, 'Statements');
 						if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-							resolve({ response: response, body: body });
+							resolveWrapper(resolve, { response: response, body: body });
 						} else {
 							reject({ response: response, body: body });
 						}

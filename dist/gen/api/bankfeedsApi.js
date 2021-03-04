@@ -22,6 +22,12 @@ const test = (params, cb) => {
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
     return localVarRequest(params, cb);
 };
+const resolveWrapper = (resolve, resp) => {
+    console.log("-----------------------------------");
+    console.log('[xero-node] resp ', JSON.stringify(resp));
+    console.log("-----------------------------------");
+    resolve(resp);
+};
 var BankFeedsApiApiKeys;
 (function (BankFeedsApiApiKeys) {
 })(BankFeedsApiApiKeys = exports.BankFeedsApiApiKeys || (exports.BankFeedsApiApiKeys = {}));
@@ -116,7 +122,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'FeedConnections');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -175,7 +181,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Statements');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -238,7 +244,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'FeedConnections');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -301,7 +307,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'FeedConnection');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -366,7 +372,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'FeedConnections');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -429,7 +435,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Statement');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
@@ -498,7 +504,7 @@ class BankFeedsApi {
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, 'Statements');
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
+                                resolveWrapper(resolve, { response: response, body: body });
                             }
                             else {
                                 reject({ response: response, body: body });
