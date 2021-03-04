@@ -16,5 +16,4 @@ oAuthState.json
 .DS_Store
 .idea
 .vscode
-dist/
 build_notes.md
